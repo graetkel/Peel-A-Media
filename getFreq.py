@@ -2,8 +2,7 @@
 import nltk
 from nltk.wsd import lesk
 
-inappropriateWordList = {'shit', 'ass', 'fuck' }
-inappropriateParsingList= {()}
+inappropriateWordList = {'shit', 'ass', 'fuck', 'damn', 'dick', 'pussy',  }
 kidFriendlyCount = 0;
 var TEXT;
 
