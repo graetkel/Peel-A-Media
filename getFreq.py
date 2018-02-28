@@ -1,3 +1,5 @@
+import wsd_code as wc
+
 var TEXT;
 
 word = file(TEXT, “r”).read().split()
