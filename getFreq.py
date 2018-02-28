@@ -5,8 +5,8 @@ from nltk import corpus
 from nltk.tokenize import sent_tokenize, word_tokenize
 from nltk.tokenize import TreebankWordTokenizer
 inappropriateWordList = {'shit', 'ass', 'fuck', 'damn', 'dick', 'pussy'}
-kidFriendlyCount = 0;
-var TEXT;
+kidFriendlyCount = 0
+var TEXT
 
 words = file(TEXT, “r”).read().split()
 sent_tokenize(words)
