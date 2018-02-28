@@ -1,19 +1,14 @@
 
 import nltk
 from nltk.wsd import lesk
-<<<<<<< HEAD
 
-inappropriateWordList = {'shit', 'ass', 'fuck', 'damn', 'dick', 'pussy', 'cunt', 'fucking', 'fucked', 'crap', 'goddamn', 'holy shit', 'motherfucker', 'whore', 'twat', 'Shitbag', 'twat', 'Dickhead', 'Cumwipe', 'Piss', 'pissoff', 'bastard', 'Bitch', 'hell', 'cock'}
-kidFriendlyCount = 0;
-var TEXT;
-=======
 from nltk import corpus
 from nltk.tokenize import sent_tokenize, word_tokenize
 from nltk.tokenize import TreebankWordTokenizer
-inappropriateWordList = {'shit', 'ass', 'fuck', 'damn', 'dick', 'pussy'}
-kidFriendlyCount = 0
-var TEXT
->>>>>>> origin/master
+inappropriateWordList = {'shit', 'ass', 'fuck', 'damn', 'dick', 'pussy', 'cunt', 'fucking', 'fucked', 'crap', 'goddamn', 'holy shit', 'motherfucker', 'whore', 'twat', 'Shitbag', 'twat', 'Dickhead', 'Cumwipe', 'Piss', 'pissoff', 'bastard', 'Bitch', 'hell', 'cock'}
+kidFriendlyCount = 0;
+var TEXT;
+
 
 
 
