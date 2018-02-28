@@ -1,6 +1,10 @@
-import wsd_code as wc
-import nltk
 
+import nltk
+from nltk.wsd import lesk
+
+inappropriateWordList = {'shit', 'ass', 'fuck' }
+inappropriateParsingList= {()}
+kidFriendlyCount = 0;
 var TEXT;
 
 words = file(TEXT, “r”).read().split()
