@@ -1,6 +1,7 @@
 
 import nltk
 from nltk.wsd import lesk
+
 from nltk import corpus
 from nltk.tokenize import sent_tokenize, word_tokenize
 from nltk.tokenize import TreebankWordTokenizer
