@@ -6,14 +6,12 @@ from nltk.tokenize import sent_tokenize, word_tokenize
 from nltk.tokenize import TreebankWordTokenizer
 inappropriateWordList = {'shit', 'ass', 'fuck', 'damn', 'dick', 'pussy'}
 kidFriendlyCount = 0
-var TEXT
-
-words = file(TEXT, “r”).read().split()
-sent_tokenize(words)
-tokenWords = TreebankWordTokenizer().tokenize(words)
-unqWords = sorted(set(word))
+TEXT = open('../Peel-A-Media/Buzzfeed.txt', 'r')
+words = TEXT.read().split()
+#sent_tokenize(words)
+#tokenWords = TreebankWordTokenizer().tokenize(words)
+unqWords = sorted(set(words))
 for word in unqWords:
-	print words.count(word), word 
+	print(words.count(word), word) 
 
-for w in words:
 	
