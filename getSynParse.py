@@ -12,7 +12,7 @@ ps = PorterStemmer()
 inappropriateWordList = {'shit', 'ass', 'fuck', 'damn', 'dick', 'pussy', 'whore', 'cunt', 'crap'
 , 'goddman', 'cum', 'piss', 'bitch', 'hell', 'cock', 'goddamn'}
 kidFriendlyCount = 0
-TEXT = open('../Peel-A-Media/JohnWickBabaYaga.txt', 'r')
+TEXT = open('../Peel-A-Media/test.txt', 'r')
 words = TEXT.read()
 sent_tokenize(words)
 tokenWords = word_tokenize(words)
