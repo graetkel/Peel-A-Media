@@ -1,4 +1,5 @@
 import nltk
+import inspect
 from nltk.wsd import lesk
 from nltk.tag import pos_tag, map_tag
 from nltk import corpus
@@ -11,5 +12,12 @@ TEXT = open('../Peel-A-Media/Buzzfeed.txt', 'r')
 words = TEXT.read()
 sent_tokenize(words)
 
-tokenWords = TreebankWordTokenizer().tokenize(words)
-print(pos_tag(tokenWords))
+tokenWords = word_tokenize(words)
+tokenWords = pos_tag(tokenWords)
+for word in tokenWords:
+    print(word[0])
+    if word[0] in inappropriateWordList:
+        if word[1] != "NNP":
+            kidFriendlyCount += 1
+print(tokenWords)
+print(kidFriendlyCount)
