@@ -3,9 +3,8 @@ from nltk.corpus import wordnet as wn
 import string
 import sys
 
-
 # Word Sense Disambiguation
-TEXT = "San Holo Transcript.txt"
+TEXT = raw_input("enter a file name: ")
 
 words = file(TEXT, "r").read().split()
 unqWords = sorted(set(words))
