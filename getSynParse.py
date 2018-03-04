@@ -10,9 +10,9 @@ from nltk.stem import PorterStemmer
 ps = PorterStemmer()
 
 inappropriateWordList = {'shit', 'ass', 'fuck', 'damn', 'dick', 'pussy', 'whore', 'cunt', 'crap'
-, 'goddman', 'cum', 'piss', 'bitch', 'hell', 'cock'}
+, 'goddman', 'cum', 'piss', 'bitch', 'hell', 'cock', 'goddamn'}
 kidFriendlyCount = 0
-TEXT = open('../Peel-A-Media/Buzzfeed.txt', 'r')
+TEXT = open('../Peel-A-Media/ShawshankRedemptionBusyLiving.txt', 'r')
 words = TEXT.read()
 sent_tokenize(words)
 tokenWords = word_tokenize(words)
@@ -23,5 +23,5 @@ for word in tokenWords:
     if temp in inappropriateWordList:
         if word[1] != "NNP":
             kidFriendlyCount += 1
-#print(tokenWords)
+print(tokenWords)
 print(kidFriendlyCount)
