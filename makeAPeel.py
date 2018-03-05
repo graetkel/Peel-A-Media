@@ -7,5 +7,22 @@ import os
 TEXT = raw_input("enter a file name: ")
 #words = file(TEXT, "r").read()
 
-os.system('python get_transcript.py ' + TEXT + ' --file ~/Documents/game\ stuff/Assignment\ 1/Peel-A-Media')
+print("Creating a temp file called tempTranscript ...")
+
+try:
+    os.system('python get_transcript.py ' + TEXT + ' --file ~/Documents/game\ stuff/Assignment\ 1/Peel-A-Media')
+except:
+    os.system('python get_transcript.py ' + TEXT + ' --overwrite ~/Documents/game\ stuff/Assignment\ 1/Peel-A-Media')
+
+
+print "This is Irene's stuff \n"
 os.system('python get_wsd.py tempTranscript.txt')
+
+
+print "This is Casey's stuff \n"
+os.system('python getSynParse.py')
+
+
+
+os.remove("tempTranscript.txt")
+print("Temp File Removed!")
