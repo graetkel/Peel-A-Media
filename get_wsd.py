@@ -4,7 +4,11 @@ import string
 import sys
 
 # Word Sense Disambiguation
-TEXT = raw_input("enter a file name: ")
+#TEXT = raw_input("enter a file name: ")
+
+#TEXT = sys.argv[0:]
+TEXT = sys.argv[-1]
+
 
 words = file(TEXT, "r").read().split()
 unqWords = sorted(set(words))
