@@ -31,6 +31,6 @@ for word in tokenWords:
             if word[1] != "NNP":
                 kidFriendlyCount += 1
     except:
-        print " "
+        print(" ")
 print(tokenWords)
 print(kidFriendlyCount)

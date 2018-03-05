@@ -44,7 +44,7 @@ class VidProperties:
         try:
             self.id = parse_url(args.youtube_url)
         except ValueError:
-            print 'ERROR: You do not appear to have entered a valid YouTube address.'
+            print('ERROR: You do not appear to have entered a valid YouTube address.')
             sys.exit(1)
         self.title = 'tempTranscript' ##get_title(self.id)
         self.filename = create_filename(self.title)

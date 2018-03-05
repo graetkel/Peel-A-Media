@@ -10,7 +10,7 @@ import sys
 TEXT = sys.argv[-1]
 
 
-words = file(TEXT, "r").read().split()
+words = open(TEXT, "r").read().split()
 unqWords = sorted(set(words))
 # removing punctuation
 unqWords = [''.join(c for c in s if c not in string.punctuation)for s in unqWords]
@@ -28,6 +28,6 @@ for loop in unqWords:
     sys.stdout.flush()
     #still don't know how to get rid of the none
     try:
-        print (lesk(unqWords, loop))
+        print(lesk(unqWords, loop))
     except:
-        print "Null"
+        print("Null")
