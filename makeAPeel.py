@@ -1,8 +1,8 @@
 
 import os
-#import get_transcript https://www.youtube.com/watch?v=JMP8_HioNqU --file ~/Desktop
 
-
+#Try this link to test make sure there is no tempTranscript file
+#https://www.youtube.com/watch?v=qhHmNaHete0
 
 TEXT = raw_input("enter a file name: ")
 #words = file(TEXT, "r").read()

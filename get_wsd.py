@@ -21,9 +21,13 @@ unqWords = [''.join(c for c in s if not c.isdigit())for s in unqWords]
 unqWords = [s for s in unqWords if s]
 print(unqWords)
 
+
 #finding the synsets
 for loop in unqWords:
     sys.stdout.write(loop + ": ")
     sys.stdout.flush()
     #still don't know how to get rid of the none
-    print (lesk(unqWords, loop))
+    try:
+        print (lesk(unqWords, loop))
+    except:
+        print "Null"
