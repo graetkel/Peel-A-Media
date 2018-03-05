@@ -10,15 +10,11 @@ from nltk.stem import PorterStemmer
 
 TEXT = open('../Peel-A-Media/JohnWickBabaYaga.txt', 'r')
 words = TEXT.read()
+index = 0
+temp = ""
 words = sent_tokenize(words)
-for word in words:
-    print(word)
-    if word[0] == "[" and word[len(word) - 1]:
-        print(word)
-        words.replace(word, "")
         
+#words = "".join(words)
 
 
 #print(words)
-#tokenWords = word_tokenize(words)
-#print(tokenWords)
