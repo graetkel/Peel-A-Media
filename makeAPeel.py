@@ -4,7 +4,7 @@ import os
 #Try this link to test make sure there is no tempTranscript file
 #https://www.youtube.com/watch?v=qhHmNaHete0
 
-TEXT = raw_input("enter a file name: ")
+TEXT = raw_input("enter the youtube url: ")
 #words = file(TEXT, "r").read()
 
 print("Creating a temp file called tempTranscript ...")
