@@ -130,6 +130,9 @@ def format_transcript(transcript):
     """
     # Remove XML tags.
     transcript = re.sub("</text>", "\n", transcript)
+    transcript = re.sub("<text start=\""," ", transcript)
+    transcript = re.sub("\" dur=[^>]+>", " ", transcript)
+
     transcript = re.sub("<[^>]+>", "", transcript)
 
     # Remove encoded HTML tags.
@@ -165,6 +168,8 @@ def create_filename(title):
     """
     # Remove characters that will cause problems in filenames.
     rep = {"/": "-", ":": " -", "\\": '-', "<": "-", ">": "-", "|": "-", "?": "", "*": ""}
+        # rep = {"/": "-"}
+
 
     rep = dict((re.escape(k), v) for k, v in rep.iteritems())
     pattern = re.compile("|".join(rep.keys()))
