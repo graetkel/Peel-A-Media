@@ -57,9 +57,12 @@ def parse_url(vid_url):
     @type vid_url: str
     """
     if 'watch?v' in vid_url:
-        vid_code = re.findall(ur'^[^=]+=([^&]+)', vid_url)
+        # vid_code = re.findall(ur'^[^=]+=([^&]+)', vid_url)
+        vid_code = re.findall('^[^=]+=([^&]+)', vid_url)
+
     elif 'youtu.be/' in vid_url:
-        vid_code = re.findall(ur'youtu\.be/([^&]+)', vid_url)
+        # vid_code = re.findall(ur'youtu\.be/([^&]+)', vid_url)
+        vid_code = re.findall('youtu\.be/([^&]+)', vid_url)
 
     else:
         raise ValueError()
@@ -130,6 +133,9 @@ def format_transcript(transcript):
     """
     # Remove XML tags.
     transcript = re.sub("</text>", "\n", transcript)
+    transcript = re.sub("<text start=\""," ", transcript)
+    transcript = re.sub("\" dur=[^>]+>", " ", transcript)
+
     transcript = re.sub("<[^>]+>", "", transcript)
 
     # Remove encoded HTML tags.
@@ -165,6 +171,8 @@ def create_filename(title):
     """
     # Remove characters that will cause problems in filenames.
     rep = {"/": "-", ":": " -", "\\": '-', "<": "-", ">": "-", "|": "-", "?": "", "*": ""}
+        # rep = {"/": "-"}
+
 
     rep = dict((re.escape(k), v) for k, v in rep.iteritems())
     pattern = re.compile("|".join(rep.keys()))
