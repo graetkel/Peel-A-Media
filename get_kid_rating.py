@@ -32,6 +32,7 @@ def getRating( arg1 , arg2):
                 if word[1] != "NNP":
                     kidFriendlyCount += 1
         except:
+            print("")
     count = arg2 / 60
     while (count > 0):
         kidFriendlyCount = kidFriendlyCount - 1

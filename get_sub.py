@@ -6,13 +6,13 @@ def getSub( arg1 ):
     doc=nlp(arg1)
     for tok in doc: 
         if (tok.dep_ == "nsubj"):
-            mySent[1] = tok
+            mySent[1] = tok.text
         elif (tok.dep_ == "ROOT"):
-            mySent[0] = tok
+            mySent[0] = tok.text
         elif (tok.dep_ == "nsubjpass"):
-            mySent[4] = tok
+            mySent[4] = tok.text
         elif (tok.dep_ == "dobj"):
-            mySent[2] = tok
+            mySent[2] = tok.text
         elif (tok.dep_ == "pobj"):
-            mySent[3] = tok
+            mySent[3] = tok.text
     return mySent
