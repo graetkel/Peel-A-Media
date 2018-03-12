@@ -1,9 +1,21 @@
 import spacy
 nlp = spacy.load('en')
+
+mySent = ["","" ,"" ,"" ,"" ]
 def getSub( arg1 ):
     doc=nlp(arg1)
-    sub_toks = [tok for tok in doc if (tok.dep_ == "nsubj" or tok.dep_ == "ROOT" or tok.dep_ == "nsubjpass" or tok.dep_ == "dobj" or tok.dep_ == "pobj") ]
-    return sub_toks
+    for tok in doc: 
+        if (tok.dep_ == "nsubj"):
+            mySent[1] = tok
+        elif (tok.dep_ == "ROOT"):
+            mySent[0] = tok
+        elif (tok.dep_ == "nsubjpass"):
+            mySent[4] = tok
+        elif (tok.dep_ == "dobj"):
+            mySent[2] = tok
+        elif (tok.dep_ == "pobj"):
+            mySent[3] = tok
+    return mySent
 
-sent = "does he talk about sports"
+sent = "when does he add butter"
 print(getSub(sent))
