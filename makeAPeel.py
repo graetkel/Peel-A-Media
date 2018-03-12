@@ -1,28 +1,39 @@
 
 import os
-
+import get_kid_rating as kidRating
+import mapTranscript as transcript
 #Try this link to test make sure there is no tempTranscript file
 #https://www.youtube.com/watch?v=qhHmNaHete0
+path = '../Peel-A-Media/'
+text = input("enter the youtube url: ")
+path = path + text
+TEXT = open(path, 'r').read()
+sentences = transcript.getSentence(transcript, TEXT)
+print(sentences)
 
-TEXT = input("enter the youtube url: ")
-#words = file(TEXT, "r").read()
-
-print("Creating a temp file called tempTranscript ...")
-
-try:
-    os.system('python get_transcript.py ' + TEXT + ' --file ~/Documents/game\ stuff/Assignment\ 1/Peel-A-Media')
-except:
-    os.system('python get_transcript.py ' + TEXT + ' --overwrite ~/Documents/game\ stuff/Assignment\ 1/Peel-A-Media')
-
-
-print("This is Irene's stuff \n")
-os.system('python get_wsd.py tempTranscript.txt')
-
-
-print("This is Casey's stuff \n")
-os.system('python getSynParse.py')
+print(kidRating.getRating(TEXT, transcript.getLastTime(transcript)))
 
 
 
-os.remove("tempTranscript.txt")
-print("Temp File Removed!")
+
+
+
+
+
+#try:
+#    os.system('python get_transcript.py ' + TEXT + ' --file ~/Documents/game\ stuff/Assignment\ 1/Peel-A-Media')
+#except:
+#    os.system('python get_transcript.py ' + TEXT + ' --overwrite ~/Documents/game\ stuff/Assignment\ 1/Peel-A-Media')
+
+
+#print("This is Irene's stuff \n")
+#os.system('python get_wsd.py tempTranscript.txt')
+
+
+#print("This is Casey's stuff \n")
+#os.system('python getSynParse.py')
+
+
+
+#os.remove("tempTranscript.txt")
+#print("Temp File Removed!")
