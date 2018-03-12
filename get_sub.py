@@ -16,6 +16,3 @@ def getSub( arg1 ):
         elif (tok.dep_ == "pobj"):
             mySent[3] = tok
     return mySent
-
-sent = "when does he add butter"
-print(getSub(sent))

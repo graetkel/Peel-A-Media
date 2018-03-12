@@ -14,14 +14,13 @@ ps = PorterStemmer()
 inappropriateWordList = {'shit', 'ass', 'asshole', 'asswipe', 'cuck', 'bullshit', 'fuck', 'damn', 'dick', 'pussy', 'whore', 'cunt', 'tawt', 'crap'
 , 'goddman', 'cum', 'piss', 'bitch', 'slut', 'skank', 'motherfucker', 'hell', 'cock', 'goddamn', 'fuckers', 'fucked', 'fucking', 'fucker'}
 
-TEXT = open('../Peel-A-Media/JohnWickBabaYaga.txt', 'r')
 def getRating( arg1 , arg2):
     kidFriendlyCount = 0
     kidRating = 0
 # TEXT = sys.argv[-1]
 # TEXT = sys.argv[-1]
 # words = TEXT.read()
-    words = TEXT.read()
+    words = arg1
     sent_tokenize(words)
     tokenWords = word_tokenize(words)
     tokenWords = pos_tag(tokenWords)
@@ -46,6 +45,3 @@ def getRating( arg1 , arg2):
 
     return kidRating
 
-
-#print(tokenWords)
-print(getRating(TEXT, 588))
