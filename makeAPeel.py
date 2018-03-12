@@ -22,13 +22,12 @@ TEXT = open('./tempTranscript.txt', 'r').read()
 #
 # print(kidRating.getRating(TEXT, transcript.getLastTime(transcript)))
 
-<<<<<<< Updated upstream
+
 print("Child rating scale out of 10")
 print("0 is perfectly word friendly for children")
 print("10 is do not let them watch")
-print("Child rating is " + str(kidRating.getRating(TEXT, transcript.getLastTime(transcript))))
-=======
->>>>>>> Stashed changes
+# print("Child rating is " + str(kidRating.getRating(TEXT, transcript.getLastTime(transcript))))
+
 
 
 
