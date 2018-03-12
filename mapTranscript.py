@@ -33,7 +33,8 @@ hashmap[time] = line
 keyword = "world"
 count = 0
 def getLastTime( ):
-    return lastTime
+    lastTime = (lastTime / 100) * 60
+    return lastTime 
 
 for x in hashmap:
     split = hashmap[x].split()
