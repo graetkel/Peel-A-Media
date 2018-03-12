@@ -40,6 +40,8 @@ def getRating( arg1 , arg2):
 
     if (kidFriendlyCount > 10):
         kidRating = 10
+    elif (kidFriendlyCount < 0):
+        kidRating = 0
     else:
         kidRating = kidFriendlyCount
 

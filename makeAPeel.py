@@ -20,9 +20,6 @@ print("Child rating is " + str(kidRating.getRating(TEXT, transcript.getLastTime(
 
 
 
-
-
-
 #try:
 #    os.system('python get_transcript.py ' + TEXT + ' --file ~/Documents/game\ stuff/Assignment\ 1/Peel-A-Media')
 #except:

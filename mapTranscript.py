@@ -1,3 +1,4 @@
+
 import sys
 import os
 import string
@@ -21,7 +22,7 @@ def getSentence(self, arg1):
             
         if words[i+1].isdigit() and (i+1) < length-1:
             line = line + " " + words[i]
-            hashmap[time] = line
+            hashmap[time] = line.lower()
             line = ""
         else:
             line = line + " " + words[i]
@@ -31,7 +32,11 @@ def getSentence(self, arg1):
     # can split the keywords and do loop minimizing.
     text = input("enter the time stamp you are looking for: ")
     arr = subject.getSub(text)
-    keyword = "" + arr[0]
+    print(arr[0])
+    print(arr[1])
+    print(arr[2])
+    print(arr[3])
+    keyword = ("" + arr[0]).lower()
     count = 0
     sentence = ""
     for x in hashmap:
