@@ -31,10 +31,8 @@ def getSentence(self, arg1):
     # can split the keywords and do loop minimizing.
     text = input("enter the time stamp you are looking for: ")
     arr = subject.getSub(text)
-    
     keyword = "" + arr[0]
     count = 0
-
     sentence = ""
     for x in hashmap:
         split = hashmap[x].split()
