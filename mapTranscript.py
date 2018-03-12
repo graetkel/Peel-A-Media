@@ -11,7 +11,7 @@ words = [''.join(c for c in s if c not in string.punctuation)for s in words]
 length = len(words)
 time = 0
 line = ""
-for i in xrange(length-1):
+for i in range(length-1):
     if words[i].isdigit():
         time = i
     if words[i+1].isdigit() and (i+1) < length-1:
