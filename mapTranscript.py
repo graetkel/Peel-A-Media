@@ -32,8 +32,10 @@ hashmap[time] = line
 # can split the keywords and do loop minimizing.
 keyword = "world"
 count = 0
-def getLastTime( ):
-    lastTime = (lastTime / 100) * 60
+def getTime():
+    return lastTime 
+def getLastTime():
+    lastTime = (getTime() / 100) * 60
     return lastTime 
 
 for x in hashmap:
@@ -44,3 +46,4 @@ for x in hashmap:
             count = count + 1
 if(count == 0):
     print("'" + keyword + "' is never spoken in the video")
+
