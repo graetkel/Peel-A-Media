@@ -1,7 +1,7 @@
 import spacy
 nlp = spacy.load('en')
 
-mySent = ["","" ,"" ,"" ,"" ]
+mySent = ["","" ,"" ,"" ,"", ""]
 def getSub( arg1 ):
     doc=nlp(arg1)
     for tok in doc: 
@@ -15,4 +15,6 @@ def getSub( arg1 ):
             mySent[2] = tok.text
         elif (tok.dep_ == "pobj"):
             mySent[3] = tok.text
+        elif (tok.dep_ == "compound"):
+            mySent[5] = tok.text
     return mySent
