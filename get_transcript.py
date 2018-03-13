@@ -133,8 +133,8 @@ def format_transcript(transcript):
     """
     # Remove XML tags.
     transcript = re.sub("</text>", "\n", transcript)
-    transcript = re.sub("<text start=\"","", transcript)
-    transcript = re.sub("\" dur=[^>]+>", "\n", transcript)
+    transcript = re.sub("<text start=\"","$~$", transcript)
+    transcript = re.sub("\" dur=[^>]+>", "$~$\n", transcript)
 
     transcript = re.sub("<[^>]+>", "", transcript)
 
