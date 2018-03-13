@@ -15,17 +15,24 @@ path = path + text
 #   os.system('python get_transcript.py ' + text + ' --overwrite ~/Documents/game\ stuff/Assignment\ 1/Peel-A-Media')
 
 
+path = path + "tempTranscript.txt"
+
 TEXT = open(path, 'r').read()
-# TEXT = open('./tempTranscript.txt', 'r').read()
-sentences = transcript.getSentence(transcript, TEXT)
+# TEXT = open('tempTranscript.txt', 'r')
+sentences = transcript.getSentence(transcript,TEXT)
 print(sentences)
 
+# print(kidRating.getRating(TEXT, transcript.getLastTime(transcript)))
 
 
-print("Child rating scale out of 10")
-print("0 is perfectly word friendly for children")
-print("10 is do not let them watch")
-print("Child rating is " + str(kidRating.getRating(TEXT, transcript.getLastTime(transcript))))
+
+os.remove("tempTranscript.txt")
+
+
+# print("Child rating scale out of 10")
+# print("0 is perfectly word friendly for children")
+# print("10 is do not let them watch")
+# print("Child rating is " + str(kidRating.getRating(TEXT, transcript.getLastTime(transcript))))
 
 
 

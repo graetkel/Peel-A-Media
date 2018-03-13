@@ -178,6 +178,7 @@ def create_filename(title):
     pattern = re.compile("|".join(rep.keys()))
 
     return pattern.sub(lambda m: rep[re.escape(m.group(0))], title)
+    # return " ";
 
 
 # EXECUTION START HERE.
@@ -204,7 +205,8 @@ if not args.overwrite:
 # Write transcript to file.
 try:
     with open(outfile, 'w') as output_file:
-        output_file.write('Title: ' + vidinfo.title + '\n\n')
+        # Prints title on txt
+        # output_file.write('Title: ' + vidinfo.title + '\n\n')
         output_file.write(vidinfo.transcript)
 except IOError as errtext:
     if 'No such file or directory' in str(errtext):
