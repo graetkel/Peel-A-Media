@@ -6,27 +6,26 @@ import mapTranscript as transcript
 #https://www.youtube.com/watch?v=qhHmNaHete0
 path = '../Peel-A-Media/'
 text = input("enter the youtube url: ")
-# path = path + text
+path = path + text
 
 
-try:
-   os.system('python get_transcript.py ' + text + ' --file ~/Documents/game\ stuff/Assignment\ 1/Peel-A-Media')
-except:
-   os.system('python get_transcript.py ' + text + ' --overwrite ~/Documents/game\ stuff/Assignment\ 1/Peel-A-Media')
+#try:
+#   os.system('python get_transcript.py ' + text + ' --file ~/Documents/game\ stuff/Assignment\ 1/Peel-A-Media')
+#except:
+#   os.system('python get_transcript.py ' + text + ' --overwrite ~/Documents/game\ stuff/Assignment\ 1/Peel-A-Media')
 
 
-# TEXT = open(path, 'r').read()
-TEXT = open('./tempTranscript.txt', 'r').read()
-# sentences = transcript.getSentence(transcript, TEXT)
-# print(sentences)
-#
-# print(kidRating.getRating(TEXT, transcript.getLastTime(transcript)))
+TEXT = open(path, 'r').read()
+# TEXT = open('./tempTranscript.txt', 'r').read()
+sentences = transcript.getSentence(transcript, TEXT)
+print(sentences)
+
 
 
 print("Child rating scale out of 10")
 print("0 is perfectly word friendly for children")
 print("10 is do not let them watch")
-# print("Child rating is " + str(kidRating.getRating(TEXT, transcript.getLastTime(transcript))))
+print("Child rating is " + str(kidRating.getRating(TEXT, transcript.getLastTime(transcript))))
 
 
 
