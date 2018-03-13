@@ -15,7 +15,7 @@ path = path + text
 #   os.system('python get_transcript.py ' + text + ' --overwrite ~/Documents/game\ stuff/Assignment\ 1/Peel-A-Media')
 
 
-path = path + "tempTranscript.txt"
+#path = path + "tempTranscript.txt"
 
 TEXT = open(path, 'r').read()
 # TEXT = open('tempTranscript.txt', 'r')
@@ -26,7 +26,7 @@ print(sentences)
 
 
 
-os.remove("tempTranscript.txt")
+#os.remove("tempTranscript.txt")
 
 
 # print("Child rating scale out of 10")

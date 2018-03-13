@@ -73,10 +73,7 @@ def getSentence(self, arg1):
         for s in split:
             for word in synRoot:
                 if(s == word):
-                    print(word)
-                    print(s)
                     sentence = "" + hashmap[x] + "\n"
-                    print(sentence)
                     if (sentence not in rootSen):
                         rootSen.append(sentence)
             for word in synNSub:
