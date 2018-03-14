@@ -44,26 +44,28 @@ def getSentence(self, arg1):
     synDSubPass = []
     synCom = []
     if (len("" + arr[0]) > 0):
-        synonyms = wordnet.synsets(("" + ps.stem(arr[0])))
+        synonyms = wordnet.synsets(("" + arr[0]))
+        print( ps.stem(arr[0]))
+        print(synonyms)
         synRoot = set(chain.from_iterable([word.lemma_names() for word in synonyms]))
     
     if (len("" + arr[1]) > 0):
-        synonyms = wordnet.synsets(("" + ps.stem(arr[1])))
+        synonyms = wordnet.synsets(("" + arr[1]))
         synNSub = set(chain.from_iterable([word.lemma_names() for word in synonyms]))
 
     if (len("" + arr[2]) > 0):
-        synonyms = wordnet.synsets(("" + ps.stem(arr[2])))
+        synonyms = wordnet.synsets(("" + arr[2]))
         synDObj = set(chain.from_iterable([word.lemma_names() for word in synonyms]))
 
     if (len("" + arr[3]) > 0):
-        synonyms = wordnet.synsets(("" + ps.stem(arr[3])))
+        synonyms = wordnet.synsets(("" + arr[3]))
         synPObj = set(chain.from_iterable([word.lemma_names() for word in synonyms]))
 
     if (len("" + arr[4]) > 0):
-        synonyms = wordnet.synsets(("" + ps.stem(arr[4])))
+        synonyms = wordnet.synsets(("" + arr[4]))
         synDSubPass = set(chain.from_iterable([word.lemma_names() for word in synonyms]))
     if (len("" + arr[5]) > 0):
-        synonyms = wordnet.synsets(("" + ps.stem(arr[5])))
+        synonyms = wordnet.synsets(("" + arr[5]))
         synCom = set(chain.from_iterable([word.lemma_names() for word in synonyms]))
     rootSen = []
     nSubSen = []
