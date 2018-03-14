@@ -24,7 +24,7 @@ def getSentence(self, arg1):
                 self.lastTime = int(words[i])
         if (words[i].isdigit()):
             time = i
-            
+
         if words[i+1].isdigit() and (i+1) < length-1:
             line = line + " " + words[i]
             hashmap[time] = line.lower()
@@ -45,10 +45,10 @@ def getSentence(self, arg1):
     synCom = []
     if (len("" + arr[0]) > 0):
         synonyms = wordnet.synsets(("" + arr[0]))
-        print( ps.stem(arr[0]))
-        print(synonyms)
+        # print( ps.stem(arr[0]))
+        # print(synonyms)
         synRoot = set(chain.from_iterable([word.lemma_names() for word in synonyms]))
-    
+
     if (len("" + arr[1]) > 0):
         synonyms = wordnet.synsets(("" + arr[1]))
         synNSub = set(chain.from_iterable([word.lemma_names() for word in synonyms]))
@@ -118,23 +118,23 @@ def getSentence(self, arg1):
         for sen1 in nSubSen:
             if (sen == sen1):
                 if (sen not in result):
-                    result.append(sen)  
+                    result.append(sen)
         for sen1 in dObjSen:
             if (sen == sen1):
                 if (sen not in result):
-                    result.append(sen)      
+                    result.append(sen)
         for sen1 in pObjSen:
             if (sen == sen1):
                 if (sen not in result):
-                    result.append(sen)  
+                    result.append(sen)
         for sen1 in nSubPassSen:
             if (sen == sen1):
                 if (sen not in result):
-                    result.append(sen)  
+                    result.append(sen)
         for sen1 in comSen:
             if (sen == sen1):
                 if (sen not in result):
-                    result.append(sen)  
+                    result.append(sen)
     sentence = ""
     if(len(rootSen) == 0):
         sentence = "'" + arr[0] + "' is never spoken in the video"
@@ -146,19 +146,19 @@ def getSentence(self, arg1):
             for sen1 in dObjSen:
                 if (sen == sen1):
                     if (sen not in result):
-                        result1.append(sen)      
+                        result1.append(sen)
             for sen1 in pObjSen:
                 if (sen == sen1):
                     if (sen not in result):
-                        result1.append(sen)  
+                        result1.append(sen)
             for sen1 in nSubPassSen:
                 if (sen == sen1):
                     if (sen not in result):
-                        result1.append(sen)  
+                        result1.append(sen)
             for sen1 in comSen:
                 if (sen == sen1):
                     if (sen not in result):
-                        result1.append(sen)  
+                        result1.append(sen)
         if (len(result1)):
             for sen in result1:
                 sentence = sentence + sen
@@ -173,4 +173,4 @@ def getBadSen():
     return sentence
 def getLastTime(self):
     lastTime = (self.lastTime / 100) * 60
-    return lastTime 
+    return lastTime
