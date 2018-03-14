@@ -84,7 +84,8 @@ if (accept):
 
         if (choices == '1'):
             print("")
-            sentences = transcript.getSentence(transcript,TEXT)
+            question = input("What timestamp would you like to find: ")
+            sentences = transcript.getSentence(transcript,TEXT, question)
             print(sentences)
         if (choices == '2'):
             print("")
@@ -92,6 +93,7 @@ if (accept):
             print("Bad Rating Score: " + str(kidRating.getRating(TEXT, transcript.getLastTime(transcript))))
         if (choices == '3'):
             print("")
+            transcript.getSentence(transcript, TEXT, "")
             print(transcript.getBadSen())
 
 
