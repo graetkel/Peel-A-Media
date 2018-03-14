@@ -1,10 +1,10 @@
 
-import urllib2
+import urllib
 import re
 import argparse
 import sys
 import os
-import urlparse
+# import urlparse
 import subprocess
 
 
@@ -76,13 +76,13 @@ def get_title(vid_id):
     @type vid_id: str
     """
 
-    video_info = urllib2.urlopen('http://youtube.com/get_video_info?video_id=' + vid_id)
+    video_info = urllib.urlopen('http://youtube.com/get_video_info?video_id=' + vid_id)
     video_info = video_info.read()
-    if urlparse.parse_qs(video_info)['status'][0] == 'fail':
+    if urllib.parse_qs(video_info)['status'][0] == 'fail':
         print "WARNING: Couldn't get video title. This probably means you specified an invalid URL."
         return None
     else:
-        return urlparse.parse_qs(video_info)['title'][0]
+        return urllib.parse_qs(video_info)['title'][0]
 
 
 def get_transcript():
@@ -92,9 +92,9 @@ def get_transcript():
                       '- The video has "burned-on" captions, where the captions are part of the video track. ' \
                       'There is no way to extract burned-in captions.'
     try:
-        transcript = urllib2.urlopen('http://video.google.com/timedtext?lang=en&v=' + vidinfo.id)
+        transcript = urllib.urlopen('http://video.google.com/timedtext?lang=en&v=' + vidinfo.id)
         transcript_xml = transcript.read()
-    except urllib2.HTTPError as error:
+    except urllib.HTTPError as error:
         if '404' in str(error):
             print not_found_error
             sys.exit(1)
