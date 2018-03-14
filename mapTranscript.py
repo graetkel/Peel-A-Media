@@ -11,7 +11,7 @@ lastTime = 0
 badWordList = []
 ps = PorterStemmer()
 badWordTest =  kid.getBadWords()
-def getSentence(self, arg1):
+def getSentence(self, arg1, arg2):
     words = arg1.split()
     words = [''.join(c for c in s if c not in string.punctuation)for s in words]
     length = len(words)
@@ -35,7 +35,7 @@ def getSentence(self, arg1):
     line = line + " " + words[i]
     hashmap[time] = line
     # can split the keywords and do loop minimizing.
-    text = input("enter the time stamp you are looking for: ")
+    text = arg2
     arr = subject.getSub(text)
     synRoot = []
     synNSub = []
