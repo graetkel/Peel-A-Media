@@ -103,7 +103,9 @@ if (accept):
 
 
 if (accept):
-    os.remove("tempTranscript.txt")
+    if (options == '1'):
+        os.remove("tempTranscript.txt")
+
     print("")
     print ("Thank You For Using Our Program")
 
