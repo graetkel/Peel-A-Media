@@ -167,7 +167,10 @@ def getSentence(self, arg1):
                 sentence = sentence + sen
     return sentence
 def getBadSen():
-    return badWordList
+    sentence = ""
+    for sen in badWordList:
+        sentence = sentence + sen
+    return sentence
 def getLastTime(self):
     lastTime = (self.lastTime / 100) * 60
     return lastTime 
