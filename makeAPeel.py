@@ -23,6 +23,7 @@ options = input("Please put the following number here: ")
 
 #JohnWickBabaYaga.txt
 #where is the car
+#cuss words
 
 accept = False
 
@@ -85,6 +86,9 @@ if (accept):
         if (choices == '1'):
             print("")
             question = input("What timestamp would you like to find: ")
+            # print("---")
+            # print(question)
+            # print("----")
             sentences = transcript.getSentence(transcript,TEXT, question)
             print(sentences)
         if (choices == '2'):
@@ -95,6 +99,8 @@ if (accept):
             print("")
             transcript.getSentence(transcript, TEXT, "")
             print(transcript.getBadSen())
+
+        print("")
 
 
 

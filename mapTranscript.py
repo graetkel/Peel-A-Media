@@ -35,6 +35,8 @@ def getSentence(self, arg1, arg2):
     line = line + " " + words[i]
     hashmap[time] = line
     # can split the keywords and do loop minimizing.
+    # print (arg2)
+
     text = arg2
     arr = subject.getSub(text)
     synRoot = []
@@ -136,6 +138,7 @@ def getSentence(self, arg1, arg2):
                 if (sen not in result):
                     result.append(sen)
     sentence = ""
+    # print(result)
     if(len(rootSen) == 0):
         sentence = "'" + arr[0] + "' is never spoken in the video"
     if (len(result) > 0):
@@ -163,8 +166,18 @@ def getSentence(self, arg1, arg2):
             for sen in result1:
                 sentence = sentence + sen
         else:
-            for sen in rootSen:
-                sentence = sentence + sen
+            if (len(nSubSen) > 0):
+                for sen in nSubSen:
+                    sentence = sentence + sen
+            else:
+                for sen in rootSen:
+                    sentence = sentence + sen
+    # print(rootSen)
+    # print(nSubSen)
+    # print(nSubPassSen)
+    # print(dObjSen)
+    # print(pObjSen)
+    # print(comSen)
     return sentence
 def getBadSen():
     sentence = ""
