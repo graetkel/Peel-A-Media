@@ -51,11 +51,11 @@ for i in range(length - 1):
         if (firstTime):
             firstTime = False
             fh.write(words[i])
-            fh.write('\n')
+            fh.write('$~$\n')
         else:
             fh.write('\n')
             fh.write(words[i])
-            fh.write('\n')
+            fh.write('$~$\n')
     else:
         fh.write(words[i] + " ")
 
