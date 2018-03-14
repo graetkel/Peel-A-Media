@@ -78,13 +78,8 @@ def get_title(vid_id):
 
     video_info = urllib.urlopen('http://youtube.com/get_video_info?video_id=' + vid_id)
     video_info = video_info.read()
-<<<<<<< HEAD
     if urlparse.parse_qs(video_info)['status'][0] == 'fail':
         print("WARNING: Couldn't get video title. This probably means you specified an invalid URL.")
-=======
-    if urllib.parse_qs(video_info)['status'][0] == 'fail':
-        print "WARNING: Couldn't get video title. This probably means you specified an invalid URL."
->>>>>>> 538e00f1cfebf414af72b61129cdd0b3892ddec4
         return None
     else:
         return urllib.parse_qs(video_info)['title'][0]
