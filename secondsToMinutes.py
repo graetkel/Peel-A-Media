@@ -41,7 +41,7 @@ for i in range(length - 1):
 fh = open("tempTranscript.txt","w")
 
 
-firstTime = True;
+firstTime = True
 
 
 for i in range(length - 1):

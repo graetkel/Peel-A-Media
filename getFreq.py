@@ -1,6 +1,6 @@
 
 import nltk
-TEXT = open('../Peel-A-Media/Buzzfeed.txt', 'r')
+TEXT = open('../Peel-A-Media/cooking.txt', 'r')
 words = TEXT.read().split()
 unqWords = sorted(set(words))
 for word in unqWords:

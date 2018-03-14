@@ -79,7 +79,7 @@ def get_title(vid_id):
     video_info = urllib2.urlopen('http://youtube.com/get_video_info?video_id=' + vid_id)
     video_info = video_info.read()
     if urlparse.parse_qs(video_info)['status'][0] == 'fail':
-        print "WARNING: Couldn't get video title. This probably means you specified an invalid URL."
+        print("WARNING: Couldn't get video title. This probably means you specified an invalid URL.")
         return None
     else:
         return urlparse.parse_qs(video_info)['title'][0]
@@ -96,13 +96,13 @@ def get_transcript():
         transcript_xml = transcript.read()
     except urllib2.HTTPError as error:
         if '404' in str(error):
-            print not_found_error
+            print(not_found_error)
             sys.exit(1)
         else:
             raise error
 
     if '<transcript>' not in transcript_xml:
-        print not_found_error
+        print(not_found_error)
         sys.exit(1)
     return transcript_xml
 
@@ -198,8 +198,8 @@ if os.path.isdir(outfile):
 # Check if output file already exists.
 if not args.overwrite:
     if os.path.isfile(outfile):
-        print 'ERROR: A file already exists in the same place with the same name.\n' \
-              'Please specify a different name or location.'
+        print('ERROR: A file already exists in the same place with the same name.\n' \
+              'Please specify a different name or location.')
         sys.exit(1)
 
 # Write transcript to file.
@@ -210,14 +210,14 @@ try:
         output_file.write(vidinfo.transcript)
 except IOError as errtext:
     if 'No such file or directory' in str(errtext):
-        print "ERROR: The destination folder you've specified does not exist. Please check the path and try again."
+        print("ERROR: The destination folder you've specified does not exist. Please check the path and try again.")
         sys.exit(1)
     else:
         raise errtext
 
 # Print filename to console.
 if args.printfilepath:
-    print outfile
+    print(outfile)
 
 # Open created file.
 if args.open:
@@ -228,4 +228,4 @@ if args.open:
     elif platform == 'linux':
         subprocess.call(('xdg-open', outfile))
     else:
-        print 'WARNING: Cannot detect your operating system. Unable to open the transcript file automatically.'
+        print('WARNING: Cannot detect your operating system. Unable to open the transcript file automatically.')

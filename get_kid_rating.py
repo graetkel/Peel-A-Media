@@ -13,13 +13,10 @@ ps = PorterStemmer()
 
 inappropriateWordList = {'shit', 'ass', 'asshole', 'asswipe', 'cuck', 'bullshit', 'fuck', 'damn', 'dick', 'pussy', 'whore', 'cunt', 'tawt', 'crap'
 , 'goddman', 'cum', 'piss', 'bitch', 'slut', 'skank', 'motherfucker', 'hell', 'cock', 'goddamn', 'fuckers', 'fucked', 'fucking', 'fucker'}
-
+badWordList = []
 def getRating( arg1 , arg2):
     kidFriendlyCount = 0
     kidRating = 0
-# TEXT = sys.argv[-1]
-# TEXT = sys.argv[-1]
-# words = TEXT.read()
     words = arg1
     sent_tokenize(words)
     tokenWords = word_tokenize(words)
@@ -30,6 +27,7 @@ def getRating( arg1 , arg2):
                 temp = ps.stem(word[0])
             if temp in inappropriateWordList:
                 if word[1] != "NNP":
+                    badWordList.append("" + word[0].lower())
                     kidFriendlyCount += 1
         except:
             print("")
@@ -47,3 +45,5 @@ def getRating( arg1 , arg2):
 
     return kidRating
 
+def getBadWords():
+    return badWordList

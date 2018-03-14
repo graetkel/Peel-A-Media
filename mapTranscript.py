@@ -4,9 +4,11 @@ import sys
 import os
 import string
 import get_sub as subject
+import get_kid_rating as kid
 hashmap = {}
 lastTime = 0
-
+badWordList = []
+badWordTest =  kid.getBadWords
 def getSentence(self, arg1):
     words = arg1.split()
     words = [''.join(c for c in s if c not in string.punctuation)for s in words]
@@ -69,12 +71,15 @@ def getSentence(self, arg1):
     result1 = []
     result = []
     nSubPassSen = []
-    keyword = ("" + arr[0]).lower()
-    count = 0
     sentence = ""
     for x in hashmap:
         split = hashmap[x].split()
         for s in split:
+            #for word in badWordTest:
+            #    if(s.lower() == word.lower()):
+            #        sentence = "" + hashmap[x] + "\n"
+            #        if (sentence not in badWordList):
+            #            badWordList.append(sentence)
             for word in synRoot:
                 if(s.lower() == word.lower()):
                     sentence = "" + hashmap[x] + "\n"
@@ -157,7 +162,8 @@ def getSentence(self, arg1):
             for sen in rootSen:
                 sentence = sentence + sen
     return sentence
-
+def getBadSen():
+    return badWordList
 def getLastTime(self):
     lastTime = (self.lastTime / 100) * 60
     return lastTime 

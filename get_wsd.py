@@ -10,7 +10,7 @@ import sys
 TEXT = sys.argv[-1]
 
 
-words = open(TEXT, "r").read().split()
+words = open('../Peel-A-Media/cooking.txt', "r").read().split()
 unqWords = sorted(set(words))
 # removing punctuation
 unqWords = [''.join(c for c in s if c not in string.punctuation)for s in unqWords]
