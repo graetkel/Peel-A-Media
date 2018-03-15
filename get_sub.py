@@ -1,4 +1,8 @@
+# We used the Spacy API in our code, here is a link to there site:
+# https://spacy.io/api/
+# Thank You Spacy for letting us use your API
 import spacy
+
 nlp = spacy.load('en')
 
 def getSub( arg1 ):

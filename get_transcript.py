@@ -1,3 +1,10 @@
+# Created by a user on github
+# Gordon (username: gordon8214)
+# link to there Github Repository: https://github.com/gordon8214/get-youtube-transcripts
+# Thank You Gordon for leaving your code public!
+
+#We modified Gordon's code to work with our program.
+
 
 import urllib
 import re
